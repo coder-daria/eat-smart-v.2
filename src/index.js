@@ -1,1 +1,1 @@
-import FormContainer from "./js/components/container/FormContainer.jsx";
+import LandingPage from "./js/pages/Landing.jsx";

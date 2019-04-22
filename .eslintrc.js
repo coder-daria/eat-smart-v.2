@@ -27,9 +27,7 @@ module.exports = {
     "node": true,
   },
  "rules":{
-    "react/jsx-filename-extension": [WARN, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": [WARN],
-    "indent": ["error", ERROR],
-    "quotes": ["error", "single"],
+    "react/jsx-filename-extension": [WARN, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "quotes": ["error", "double"],
   }
 };

@@ -1,6 +1,12 @@
 const OFF = 0, WARN = 1, ERROR = 2;
 
 module.exports = {
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.5.2"
+    }
+  },
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
@@ -22,8 +28,8 @@ module.exports = {
   },
  "rules":{
     "react/jsx-filename-extension": [WARN, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-indent": [OFF],
+    "react/jsx-indent": [WARN],
     "indent": ["error", ERROR],
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single"],
   }
 };

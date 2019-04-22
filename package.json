@@ -1,24 +1,24 @@
 {
-  "name": "wedding-planner",
+  "name": "eat-smart-v.2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "start": "npm run eslint && webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
-    "eslint": "eslint ./src/**/*.jsx"
+    "eslint": "eslint ./src/**/*.tsx"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darilla/wedding-planner.git"
+    "url": "git+https://github.com/darilla/eat-smart-v.2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darilla/wedding-planner/issues"
+    "url": "https://github.com/darilla/eat-smart-v.2/issues"
   },
-  "homepage": "https://github.com/darilla/wedding-planner#readme",
+  "homepage": "https://github.com/darilla/eat-smart-v.2#readme",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -26,8 +26,12 @@
     "@babel/plugin-transform-classes": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.8.14",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^5.15.0",
     "eslint-plugin-react": "^7.12.4",
     "html-loader": "^0.5.5",
@@ -35,8 +39,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.4.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.14",
+    "styled-components": "^4.2.0"
   }
 }

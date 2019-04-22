@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
-import Input from "../components/atoms/Input";
+import Input from '../components/atoms/Input';
 
 class LandingPage extends Component {
   constructor() {
     super();
     this.state = {
-      seo_title: ""
+      seo_title: ''
     };
   }
 
@@ -21,10 +21,10 @@ class LandingPage extends Component {
     return (
       <div>
         <Input
-          text="SEO title"
-          label="seo_title"
-          type="text"
-          id="seo_title"
+          text='SEO title'
+          label='seo_title'
+          type='text'
+          id='seo_title'
           value={seo_title}
           handleChange={this.handleChange}
         />
@@ -35,5 +35,5 @@ class LandingPage extends Component {
 
 export default LandingPage;
 
-const root = document.getElementById("root");
+const root = document.getElementById('root');
 root ? ReactDOM.render(<LandingPage />, root) : false;

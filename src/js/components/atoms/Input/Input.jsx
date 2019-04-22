@@ -1,12 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Button } from './Input.styles';
 
 const Input = ({ label, text, type, id, value, handleChange }) => (
   <div>
     <label htmlFor={label}>{text}</label>
+    <Button>Button</Button>
     <input
       type={type}
-      className="form-control"
+      className='form-control'
       id={id}
       value={value}
       onChange={handleChange}

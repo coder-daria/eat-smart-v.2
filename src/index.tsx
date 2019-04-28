@@ -2,22 +2,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-interface LandingProps {
-  children: string,
-}
+import Landing from "./pages/Landing";
+import Navigation from "./components/Navigation";
 
-class LandingPage extends React.Component<LandingProps, {}> {
+class App extends React.Component<{}, {}> {
   render() {
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <>
+        <Navigation />
+        <Landing />
+      </>
     );
   }
 }
 
-export default LandingPage;
-
 const ROOT = document.getElementById("root");
 
-ReactDOM.render(<LandingPage>Hi</LandingPage>, ROOT);
+ReactDOM.render(<App />, ROOT);

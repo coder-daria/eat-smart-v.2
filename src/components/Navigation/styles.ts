@@ -31,5 +31,3 @@ export const Link = styled.a<LinkProps>`
     color: #E87C6D;
   }
 `;
-
-

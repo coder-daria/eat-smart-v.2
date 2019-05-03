@@ -8,6 +8,6 @@
     ["@babel/plugin-proposal-class-properties"],
     "@babel/plugin-transform-arrow-functions",
     "@babel/plugin-transform-classes",
-    "babel-plugin-styled-components"
+    ["babel-plugin-styled-components", {"displayName": true}],
   ]
 }

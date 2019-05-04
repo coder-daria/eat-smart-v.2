@@ -22,12 +22,12 @@ export const Links = styled.ul`
 
 // @todo add props validation to the main component
 export const Link = styled.a<LinkProps>`
-  color: ${({ active }) => active ? "#FF7883"  : "inherit" };
+  color: ${({ theme, active }) => active ? `${theme.palette.peach.dark50}`  : "inherit" };
   cursor: pointer;
   padding: 0 20px;
   text-decoration: none;
 
   &:hover {
-    color: #E87C6D;
+    color: ${({ theme }) => theme.palette.pink.dark50};
   }
 `;

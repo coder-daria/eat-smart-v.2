@@ -11,8 +11,8 @@ class App extends React.Component<{}, {}> {
     return (
       <GlobalThemeProvider>
         <>
-        <Navigation />
-        <Landing />
+          <Navigation />
+          <Landing />
         </>
       </GlobalThemeProvider>
     );

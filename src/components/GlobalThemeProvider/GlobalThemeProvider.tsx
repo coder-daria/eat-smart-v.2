@@ -8,7 +8,7 @@ interface GlobalThemeProviderProps {
   children: ReactChild;
 }
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
   }
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 const GlobalThemeProvider:React.FC<GlobalThemeProviderProps> = ({children}) => (
   <ThemeProvider theme={theme}>
     <>
-      <GlobalStyle />
+      <GlobalStyles />
       {children}
     </>
    </ThemeProvider>

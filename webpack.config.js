@@ -16,14 +16,14 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader"
       },
       {
         test: /\.html$/,
         loader: "html-loader"
-      }
+      },
     ]
   },
   resolve: {
@@ -34,5 +34,5 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
-  ]
+  ],
 };

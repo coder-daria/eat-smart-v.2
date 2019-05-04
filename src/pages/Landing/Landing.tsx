@@ -7,9 +7,8 @@ import Card from "../../components/Card";
 import { 
   BackgroundImageWrapper, 
   BackgroundLayer, 
-  Content, 
   Description, 
-  Introduction, 
+  Hero, 
   Text, 
 } from "./styles";
 
@@ -33,11 +32,11 @@ const data = [
 ];
 
 const LandingPage: React.FC = () => (
-  <Content>
-    <Introduction>
+  <>
+    <Hero>
       <BackgroundLayer />
       <BackgroundImageWrapper>
-        <img 
+        <img
           height="100%"
           src="https://img.taste.com.au/KZJZuz9r/taste/2016/11/fruity-smoothie-bowl-106970-1.jpeg" 
           width="100%"
@@ -47,13 +46,22 @@ const LandingPage: React.FC = () => (
         <span>Eat Smart App</span>
         <span>Make healthy choices everyday!</span>
       </Text>
-    </Introduction>
+    </Hero>
     <Description>
       {data.map((cardData, index) => {
-        return <Card text={cardData.text} src={cardData.src} key={index}/>
+        const isEven = index%2 === 0;
+
+        return (
+        <Card 
+          isReversed={isEven}
+          key={index}
+          src={cardData.src} 
+          text={cardData.text}
+        />
+        )
       })}
     </Description>
-  </Content>
+  </>
 );
 export default LandingPage;
 

@@ -1,25 +1,20 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { createGlobalStyle } from "styled-components";
 
 import Landing from "./pages/Landing";
 import Navigation from "./components/Navigation";
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-  }
-`;
+import GlobalThemeProvider from "./components/GlobalThemeProvider";
 
 class App extends React.Component<{}, {}> {
   render() {
     return (
-      <>
-        <GlobalStyle />
+      <GlobalThemeProvider>
+        <>
         <Navigation />
         <Landing />
-      </>
+        </>
+      </GlobalThemeProvider>
     );
   }
 }

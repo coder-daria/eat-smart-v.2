@@ -1,18 +1,23 @@
 import React from "react";
 
-import { Container, Image } from "./styles";
+import { Container, Description, Image } from "./styles";
 
 interface CardProps {
   className?:string;
-  text: string;
+  isReversed?: boolean;
   src: string;
+  text: string;
 }
 
-const Card: React.FC<CardProps> = ({ className, src, text }) => (
-  <Container className={className}>
+const Card: React.FC<CardProps> = ({ className, src, text, isReversed }) => (
+  <Container className={className} isReversed={isReversed}>
     <Image src={src} />
-    <p>{text}</p>
+    <Description>{text}</Description>
   </Container>
 );
+
+Card.defaultProps = {
+  isReversed: false,
+};
 
 export default Card;

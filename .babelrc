@@ -1,13 +1,16 @@
-{
+ {
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react",
-    "@babel/preset-typescript"
+    "@babel/preset-typescript",
   ],
   "plugins": [
-    ["@babel/plugin-proposal-class-properties"],
+    "@babel/plugin-proposal-class-properties",
     "@babel/plugin-transform-arrow-functions",
+    "babel-plugin-transform-export-extensions",
+    "@babel/proposal-object-rest-spread",
     "@babel/plugin-transform-classes",
     ["babel-plugin-styled-components", {"displayName": true}],
+    "transform-dynamic-import",
   ]
 }

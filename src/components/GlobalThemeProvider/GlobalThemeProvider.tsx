@@ -1,14 +1,14 @@
 
-import React, { ReactChild } from "react";
+import * as React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 import theme from "./theme";
 
 interface GlobalThemeProviderProps {
-  children: ReactChild;
+  children: React.ReactChild;
 }
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
   }

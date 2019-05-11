@@ -10,16 +10,16 @@ sunt in culpa qui officia deserunt mollit anim id est laborum`;
 
 export const links = [
   {
-    isActive: true,
-    text: "About",
-  },
-  {
-    isActive: false,
     text: "Daily",
+    to: '/daily'
   },
   {
-    isActive: false,
-    text: "Menu",
+    text: "Food",
+    to: '/food'
+  },
+  {
+    text: "Preferences",
+    to: '/preferences'
   },
 ];
 

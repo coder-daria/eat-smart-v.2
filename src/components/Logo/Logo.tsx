@@ -1,12 +1,12 @@
 import * as React from "react";
 
-import { Container } from "./styles";
+import { ScLink } from "./styles";
 
 const Logo: React.FC= () => (
-  <Container>
+  <ScLink to="/">
     <span>Eat</span>
     <span>Smart</span>
-  </Container>
+  </ScLink>
 );
 
 export default Logo;

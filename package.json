@@ -65,6 +65,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.14",
     "jslint": "^0.12.1",
+    "react-router-dom": "^5.0.0",
     "styled-components": "^4.2.0"
   }
 }

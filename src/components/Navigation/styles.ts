@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-interface LinkProps {
-  active: boolean;
-}
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
   align-items: center;
@@ -21,8 +18,8 @@ export const Links = styled.ul`
 `;
 
 // @todo add props validation to the main component
-export const Link = styled.a<LinkProps>`
-  color: ${({ theme, active }) => active ? `${theme.palette.peach.dark50}`  : "inherit" };
+export const ScLink = styled(NavLink)`
+  color: inherit;
   cursor: pointer;
   padding: 0 20px;
   text-decoration: none;

@@ -8,8 +8,8 @@
     "build": "webpack --mode production",
     "eslint": "eslint ./src/**/*.tsx",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:coverage": "npm test --coverage",
+    "test:watch": "npm test --watch"
   },
   "repository": {
     "type": "git",

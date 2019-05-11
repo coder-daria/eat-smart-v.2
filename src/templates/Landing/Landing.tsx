@@ -1,6 +1,6 @@
-import React from "react";
+import * as React from "react";
 
-import { loremIpsum } from "../../static/hardcoded";
+import { cardsData as cards } from "../../static/hardcoded";
 
 import Card from "../../components/Card";
 
@@ -11,25 +11,6 @@ import {
   Hero, 
   Text, 
 } from "./styles";
-
-const data = [
-  {
-    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
-    text: loremIpsum,
-  },
-  {
-    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
-    text: loremIpsum,
-  },
-  {
-    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
-    text: loremIpsum,
-  },
-  {
-    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
-    text: loremIpsum,
-  },
-];
 
 const LandingPage: React.FC = () => (
   <>
@@ -48,15 +29,15 @@ const LandingPage: React.FC = () => (
       </Text>
     </Hero>
     <Description>
-      {data.map((cardData, index) => {
+      {cards.map((card, index) => {
         const isEven = index%2 === 0;
 
         return (
         <Card 
+          description={card.description}
           isReversed={isEven}
           key={index}
-          src={cardData.src} 
-          text={cardData.text}
+          src={card.src} 
         />
         )
       })}

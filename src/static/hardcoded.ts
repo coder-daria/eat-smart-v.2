@@ -8,7 +8,7 @@ velit esse cillum dolore eu fugiat nulla pariatur.
 Excepteur sint occaecat cupidatat non proident, 
 sunt in culpa qui officia deserunt mollit anim id est laborum`;
 
-export const LINKS = [
+export const links = [
   {
     isActive: true,
     text: "About",
@@ -20,5 +20,24 @@ export const LINKS = [
   {
     isActive: false,
     text: "Menu",
+  },
+];
+
+export const cardsData = [
+  {
+    description: loremIpsum,
+    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
+  },
+  {
+    description: loremIpsum,
+    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
+  },
+  {
+    description: loremIpsum,
+    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
+  },
+  {
+    description: loremIpsum,
+    src: "https://i.iplsc.com/wbrew-powszechnej-opinii-truskawki-nie-wywoluja-uczulenia/0006MQAB5GX9ISJ9-C122-F4.jpg",
   },
 ];

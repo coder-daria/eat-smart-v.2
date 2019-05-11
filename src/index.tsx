@@ -1,8 +1,8 @@
 
-import React from "react";
+import * as React from "react"; from "react";
 import ReactDOM from "react-dom";
 
-import Landing from "./pages/Landing";
+import Landing from "./templates/Landing";
 import Navigation from "./components/Navigation";
 import GlobalThemeProvider from "./components/GlobalThemeProvider";
 

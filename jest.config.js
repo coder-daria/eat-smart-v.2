@@ -1,5 +1,5 @@
 module.exports = {
-  verbose: true,
+  verbose: false,
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   setupFiles: ["<rootDir>/enzyme.config.js"],
   roots: ["<rootDir>/src"],

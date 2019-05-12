@@ -28,8 +28,8 @@ describe("<Routes/>", () => {
   it("should render <Landing /> with path: /", () => {
     const wrapper = renderWrapper(["/"]);
 
-    expect(wrapper.find(Landing).length).toBe(1);
     expect(wrapper.find(PageNotFound).length).toBe(0);
+    expect(wrapper.find(Landing).length).toBe(1);
   });
 
   it("should render <Food /> with path: /food", () => {

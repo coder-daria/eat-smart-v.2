@@ -1,20 +1,21 @@
 
 import * as React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Landing from "./templates/Landing";
-import Navigation from "./components/Navigation";
 import GlobalThemeProvider from "./components/GlobalThemeProvider";
+import Navigation from "./components/Navigation";
+import Routes from "./components/Routes";
 
-class App extends React.Component<{}, {}> {
+export default class App extends React.Component<{}, {}> {
   render() {
     return (
-      <GlobalThemeProvider>
-        <>
-          <Navigation />
-          <Landing />
-        </>
-      </GlobalThemeProvider>
+      <Router>
+          <GlobalThemeProvider>
+            <Navigation />
+         </GlobalThemeProvider>
+         <Routes />
+      </Router>
     );
   }
 }

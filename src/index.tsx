@@ -16,12 +16,12 @@ export default class App extends React.Component<{}, {}> {
   render() {
     return (
       <Router>
-          <GlobalThemeProvider>
-            <>
-              <Navigation />
-              <Routes />
-            </>
-         </GlobalThemeProvider>
+        <GlobalThemeProvider>
+          <>
+            <Navigation />
+            <Routes />
+          </>
+        </GlobalThemeProvider>
       </Router>
     );
   }

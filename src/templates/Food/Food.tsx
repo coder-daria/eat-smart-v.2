@@ -1,7 +1,9 @@
 import * as React from "react";
 
 const Food: React.FC = () => (
-  <div>Coming soon!</div>
+  <div>
+    Comming soon!
+  </div>
 );
 export default Food;
 

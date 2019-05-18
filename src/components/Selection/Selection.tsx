@@ -1,15 +1,27 @@
 import * as React from "react";
 
-import { Container, Frame } from "./styles";
+import { 
+  Container, 
+  Frame, 
+  Input, 
+  Label, 
+  Span,
+} from "./styles";
 
 const Selection: React.FC= () => {
-  const [isEditable, changeOption] = React.useState(false);
+  const [isEditable, makeEditable] = React.useState(false);
 
   return (
     <Container>
       <Frame isEditable={isEditable} />
-      <button onClick={() => changeOption(false)}>Add</button>
-      <button onClick={() => changeOption(true)}>Edit</button>
+      <Label>
+        <Input checked={!isEditable} type="radio" onChange={() => makeEditable(false)} />
+        <Span>Add</Span>
+      </Label>
+      <Label>
+        <Input checked={isEditable} type="radio" onChange={() => makeEditable(true)}/>
+        <Span>Edit</Span>
+      </Label>
     </Container>
   );
 }

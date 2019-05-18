@@ -4,26 +4,53 @@ interface FrameProps {
   isEditable: boolean;
 }
 
+const borderRadius = "5px";
+
 export const Container = styled.div`
+  align-items: center;
+  background-color: ${({ theme }) => theme.palette.pink.light50};
+  border-radius: ${borderRadius};
+  color: ${({ theme }) => theme.palette.white.default};
   display: flex;
+  font-size: 1.2rem;
+  height: 30px;
   position: relative;
-  width: 80px;
-  height: 20px;
-  button {
-    width: 40px;
-    margin: 0;
-    padding: 0;
-  }
+  width: 200px;
 `;
 
 export const Frame = styled.div<FrameProps>`
+  background-color: ${({ theme }) => theme.palette.pink.dark50};
+  border-radius: ${borderRadius};
   box-sizing: border-box;
-  border: 2px solid purple;
-  opacity: .5;
-  position: absolute;
-  left: ${({ isEditable }) => isEditable ? "33%" : "0"};
-  width: 50%;
   height: 100%;
+  left: ${({ isEditable }) => isEditable ? "50%" : "0"};
+  opacity: 0.5;
   pointer-events: none;
+  position: absolute;
   transition: left 0.5s;
+  width: 50%;
+`;
+
+export const Label = styled.label`
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  width: 50%;
+`;
+
+export const Input = styled.input`
+  height: 100%;
+  margin: 0;
+  visibility: hidden;
+  width: 100%;
+`;
+
+export const Span = styled.span`
+  align-self: center;
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  width: 100%;
 `;

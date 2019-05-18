@@ -1,10 +1,8 @@
 import * as React from "react";
 
-import Selection from "../../components/Selection";
-
 const Food: React.FC = () => (
   <div>
-    <Selection />
+    Comming soon!
   </div>
 );
 export default Food;

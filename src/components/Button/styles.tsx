@@ -8,7 +8,7 @@ interface ButtonProps {
 
 export const ButtonContainer = styled.button <ButtonProps>`
   align-items: center;
-  background-color: ${({ theme, color }) => theme.palette[color].default};
+  background-color: ${({ color, theme }) => theme.palette[color].default};
   border-radius: 2px;
   border-style: solid;
   border: none;
@@ -27,15 +27,15 @@ export const ButtonContainer = styled.button <ButtonProps>`
   }
 
   &:hover {
-    background-color: ${({ theme, color }) => theme.palette[color].dark25};
+    background-color: ${({ color, theme }) => theme.palette[color].dark25};
   }
 
   &:active {
-    background-color: ${({ theme, color }) => theme.palette[color].dark50};
+    background-color: ${({ color, theme }) => theme.palette[color].dark50};
   }
 `;
 
 export const Text = styled.span`
-  color: white;
+  color: ${({ theme }) => theme.palette.white.default};;
   display: inline-block;
 `;

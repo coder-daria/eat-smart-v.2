@@ -3,6 +3,7 @@ import * as React from "react";
 import { cardsData as cards } from "../../static/hardcoded";
 
 import Card from "../../components/Card";
+import Button from "../../components/Button";
 
 import { 
   BackgroundImageWrapper, 

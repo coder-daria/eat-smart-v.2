@@ -17,9 +17,11 @@ export default class App extends React.Component<{}, {}> {
     return (
       <Router>
           <GlobalThemeProvider>
-            <Navigation />
+            <>
+              <Navigation />
+              <Routes />
+            </>
          </GlobalThemeProvider>
-         <Routes />
       </Router>
     );
   }

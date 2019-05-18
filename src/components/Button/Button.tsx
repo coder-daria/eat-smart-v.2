@@ -6,30 +6,33 @@ import { ButtonContainer, Text }from "./styles";
 
 interface ButtonProps {
   children: string;
+  className?: string;
   color?: string;
   iconFill?: string;
   iconName?: string;
   iconPosition?: string;
+  iconSize?: number;
   onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ 
   children,
+  className,
   color,
   iconFill,
   iconName,
   iconPosition,
+  iconSize,
   onClick,
-  ...props
 }) => (
   <ButtonContainer 
+    className={className}
     color={color} 
     iconPosition={iconPosition} 
     onClick={onClick}
-    {...props}
   >
     <Text>{children}</Text>
-    {iconName && <Icon fill={iconFill} iconName={iconName} />}
+    {iconName && <Icon fill={iconFill} iconName={iconName} iconSize={iconSize} />}
   </ButtonContainer>
 );
 

@@ -12,6 +12,10 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
   }
+
+  input {
+    margin: 0;
+  }
 `;
 
 const GlobalThemeProvider:React.FC<GlobalThemeProviderProps> = ({children}) => (

@@ -1,7 +1,10 @@
 import * as React from "react";
 
-import Form from "../../components/Form";
+import Search from "../../components/Search";
 
-const Food: React.FC = () => <Form />;
-
+const Food: React.FC = () => (
+  <div>
+    <Search />
+  </div>
+);
 export default Food;

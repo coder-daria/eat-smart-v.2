@@ -2,6 +2,8 @@ import * as React from "react";
 import { mount } from "enzyme";
 import { MemoryRouter } from "react-router-dom";
 
+import GlobalThemeProvider from "./../../components/GlobalThemeProvider";
+
 import Daily from "../../templates/Daily";
 import Food from "../../templates/Food";
 import Landing from "../../templates/Landing";
@@ -13,7 +15,9 @@ describe("<Routes/>", () => {
   const renderWrapper = (path: string[]) => {
     return mount(
       <MemoryRouter initialEntries={path}>
-        <Routes/>
+        <GlobalThemeProvider>
+          <Routes/>
+        </GlobalThemeProvider>
       </MemoryRouter>
     );
   };

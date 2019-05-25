@@ -6,7 +6,7 @@ interface ButtonProps {
   iconPosition?: string;
 }
 
-export const ButtonContainer = styled.button <ButtonProps>`
+export const ButtonContainer = styled.button<ButtonProps>`
   align-items: center;
   background-color: ${({ color, theme }) => theme.palette[color].default};
   border-radius: 2px;
@@ -33,9 +33,15 @@ export const ButtonContainer = styled.button <ButtonProps>`
   &:active {
     background-color: ${({ color, theme }) => theme.palette[color].dark50};
   }
+
+  &:disabled {
+    background-color: ${({ color, theme }) => theme.palette[color].dark50};;
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
 `;
 
 export const Text = styled.span`
-  color: ${({ theme }) => theme.palette.white.default};;
+  color: ${({ theme }) => theme.palette.white.default};
   display: inline-block;
 `;

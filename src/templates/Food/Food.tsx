@@ -1,9 +1,7 @@
 import * as React from "react";
 
-const Food: React.FC = () => (
-  <div>
-    Comming soon!
-  </div>
-);
-export default Food;
+import Form from "../../components/Form";
 
+const Food: React.FC = () => <Form />;
+
+export default Food;

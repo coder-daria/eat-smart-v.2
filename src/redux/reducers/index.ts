@@ -4,6 +4,6 @@ import dailyReducer from "./daily";
 import foodReducer from "./food";
 
 export default combineReducers({
-  dailyReducer,
-  foodReducer
+  daily: dailyReducer,
+  food: foodReducer
 });

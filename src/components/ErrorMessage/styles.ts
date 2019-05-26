@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-export const Message = styled.span`
+interface MessageProps {
+  error: boolean;
+}
+
+export const Message = styled.span<MessageProps>`
   color: red;
+  display: inline-block;
   font-size: 0.5rem;
-  margin-bottom: 10px;
+  margin: 10px;
+  visibility: ${({ error }) => error ? "visible" : "hidden"};
 `;

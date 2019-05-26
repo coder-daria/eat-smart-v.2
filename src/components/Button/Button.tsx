@@ -2,7 +2,7 @@ import React from "react";
 
 import Icon from "../Icon";
 
-import { ButtonContainer, Text }from "./styles";
+import { ButtonContainer, Text } from "./styles";
 
 interface ButtonProps {
   children: string;

@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import Search from "../../components/Search";
+import SearchFood from "../../components/Search";
 
 const Food: React.FC = () => (
   <div>
-    <Search />
+    <SearchFood />
   </div>
 );
 export default Food;

@@ -8,27 +8,49 @@ export const Container = styled.div`
   border-radius: 40px;
   display: flex;
   height: 25px;
-  justify-content: space-around;
-  padding-right: 5px;
+  padding: 0 4px;
   position: relative;
-  width: 185px;
+  width: 150px;
 
   svg {
     cursor: pointer;
   }
 `;
 
-export const StyledIcon = styled(Icon)`
+export const SearchIcon = styled(Icon)`
+  fill: ${({ theme }) => theme.palette.white.default};
+  opacity: 0.8;
+  position: absolute;
+  right: 13px;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+  
+  &:active {
+    opacity: 1;
+  }
+`;
+
+export const CancelIcon = styled(Icon)`
   fill: pink;
   position: absolute;
-  right: 35px;
+  right: 42px;
+
+  &:hover {
+    fill: ${({ theme }) => theme.palette.pink.default};
+  }
+
+  &:active {
+    fill: ${({ theme }) => theme.palette.pink.dark25};
+  }
 `;
 
 export const StyledInput = styled.input`
-  background-color:${({ theme }) => theme.palette.white.default};
+  background-color: ${({ theme }) => theme.palette.white.default};
   border-radius: 40px;
   font-size: 0.6rem;
   height: 75%;
   padding: 0 10px;
-  width: 75%;
+  width: 65%;
 `;

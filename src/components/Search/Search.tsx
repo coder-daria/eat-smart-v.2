@@ -1,55 +1,44 @@
 import * as React from "react";
 
-import Icon from "../Icon";
+import { 
+  CancelIcon, 
+  Container, 
+  SearchIcon, 
+  StyledInput,
+} from "./styles";
 
-import { Container, StyledIcon, StyledInput } from "./styles";
-
-interface SearchState {
-  value: string;
+interface SearchProps {
+  searchedFood: string;
+  searchFood: (food: string) => void
 }
 
-class Search extends React.Component<{}, SearchState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ""
-    }
+const Search: React.FC<SearchProps> = (props) => {
+  const [value, setValue] = React.useState("");
+
+  const clearValue = (): void => setValue("");
+
+  const search = (): void => {
+    const { searchFood } = props;
+
+    searchFood(value);
+    clearValue();
   }
 
-  handleChange = (e:any):void => {
-    this.setState({
-      value: e.target.value,
-    });
-  }
-
-  handleClick = (e:any):void => {
-    if(e.currentTarget.name === "search") {
-      //look for a searched value
-    }
-    this.setState({
-      value: "",
-    });
-  }
-
-  render() {
-    const { value } = this.state;
-
-    return (
-      <Container>
-        <StyledInput value={value} onChange={this.handleChange} />
-        <StyledIcon
-          iconName="cancelCircle" 
-          iconSize={10} 
-          onClick={this.handleClick} 
-        />
-        <Icon 
-          iconName="search" 
-          iconSize={15} 
-          onClick={this.handleClick} 
-        />
-      </Container> 
-    )
-  }
+  return (
+    <Container>
+      <StyledInput value={value} onChange={(e) => setValue(e.target.value)} />
+      <CancelIcon
+        iconName="cancelCircle" 
+        iconSize={10} 
+        onClick={clearValue} 
+      />
+      <SearchIcon 
+        iconName="search" 
+        iconSize={15} 
+        onClick={search} 
+      />
+    </Container> 
+  )
 }
 
 export default Search;

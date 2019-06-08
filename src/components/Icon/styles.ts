@@ -9,5 +9,3 @@ export const SVG = styled.svg`
   min-height: ${({ width }) => `${width}px`};
   min-width: ${({ height }) => `${height}px`};
 `;
-
-export default Path;

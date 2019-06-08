@@ -14,7 +14,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   input {
+    border: none;
     margin: 0;
+    outline: none;
   }
 `;
 

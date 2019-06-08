@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import { isArray } from "../../utils/helpers";
 
@@ -12,7 +12,7 @@ interface IconProps {
   iconName: string;
   iconSize?: number;
   iconWidth?: number;
-  onClick?: () => void;
+  onClick?: (e:any) => any;
 }
 
 const Icon:React.FC<IconProps> = ({
@@ -23,9 +23,10 @@ const Icon:React.FC<IconProps> = ({
   iconSize,
   iconWidth,
   onClick,
-}) => {
+ }) => {
   return (
     <SVG
+      name={iconName}
       aria-hidden
       className={className}
       fill={fill}

@@ -14,7 +14,7 @@ interface ButtonProps {
   iconPosition?: string;
   iconSize?: number;
   onClick?: () => void;
-  type?: string;
+  type?: "submit" | "button";
 }
 
 const Button: React.FC<ButtonProps> = ({ 

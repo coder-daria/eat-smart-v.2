@@ -33,6 +33,12 @@ export const ButtonContainer = styled.button<ButtonProps>`
   &:active {
     background-color: ${({ color, theme }) => theme.palette[color].dark50};
   }
+
+  &:disabled {
+    background-color: ${({ color, theme }) => theme.palette[color].dark50};;
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
 `;
 
 export const Text = styled.span`

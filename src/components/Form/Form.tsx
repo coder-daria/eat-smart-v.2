@@ -1,10 +1,9 @@
 import * as React from "react";
 import { Formik } from "formik";
 
-import Button from "../Button";
 import Input from "../Input";
 
-import { StyledForm } from "./styles";
+import { StyledButton, StyledForm } from "./styles";
 
 interface Values {
   carbs: string;
@@ -13,35 +12,12 @@ interface Values {
   protein: string;
 }
 
-const initialValues = {
-  carbs: "0",
-  fat: "0",
-  name: "",
-  protein: "0",
-}
-
-const Form: React.FC = () => {
-  const handleValidation = (values: any) => {
-    let errors:any = {};
-    const errorMessage = "This field is required.";
-
-    if (!values.name) {
-      errors.name = errorMessage;
-    }
-
-    if (!values.carbs) {
-      errors.carbs = errorMessage;
-    }
-  
-    if (!values.protein) {
-      errors.protein = errorMessage;
-    }
-
-    if (!values.fat) {
-      errors.fat = errorMessage;
-    }
-
-    return errors;
+const Form: React.FC = (props:any) => {
+  const initialValues = {
+    carbs: "",
+    fat: "",
+    name: "",
+    protein: "",
   };
   const fields = [
     {
@@ -61,15 +37,44 @@ const Form: React.FC = () => {
       type: "number"
     },
   ];
+  let areEmptyValues = true;
 
+  const handleValidation = (values: any) => {
+    let errors:any = {};
+    const errorMessage = "Incorrect value";
+
+    Object.values(values).map(value => {
+      if(value !== undefined){
+        areEmptyValues = false;
+      }
+    });
+  
+    if (!values.name) {
+      errors.name = errorMessage;
+    }
+
+    if (!values.carbs) {
+      errors.carbs = errorMessage;
+    }
+  
+    if (!values.protein) {
+      errors.protein = errorMessage;
+    }
+
+    if (!values.fat) {
+      errors.fat = errorMessage;
+    }
+
+    return errors;
+  };
+  
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values: Values, { setSubmitting }) => {
-        setTimeout(() => {
-          console.log(values);
-          setSubmitting(false);
-        }, 400);
+      validate={handleValidation}
+      onSubmit={(values: Values, { resetForm }) => {
+        props.addFood(values);
+        resetForm(initialValues);
       }}
     >
       {({
@@ -77,27 +82,32 @@ const Form: React.FC = () => {
         handleBlur,
         handleChange,
         handleSubmit,
-        isSubmitting,
         touched,
         values,
-      }) => (
-        <StyledForm onSubmit={handleSubmit}>
-          {fields.map((field, index) => 
-            <Input 
-              key={field.name + index}
-              type={field.type}
-              name={field.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[field.name]}
-              error={errors[field.name] && touched[field.name]}
-            />
-          )}
-          <Button type="submit" disabled={isSubmitting}>
-            Submit
-          </Button>
-        </StyledForm>
-      )}
+      }) => {
+        const isDisabled = areEmptyValues || Object.entries(errors).length !== 0;
+
+        return (
+          <StyledForm onSubmit={handleSubmit}>
+            {fields.map((field, index) => 
+              <Input
+                error={errors[field.name] && touched[field.name]}
+                errorMessage={errors[field.name]}
+                key={field.name + index}
+                name={field.name}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                placeholder={field.name}
+                type={field.type}
+                value={values[field.name]}
+              />
+            )}
+            <StyledButton type="submit" disabled={isDisabled}>
+              Submit
+            </StyledButton>
+          </StyledForm>
+        )
+      }}
     </Formik>
   );
 };

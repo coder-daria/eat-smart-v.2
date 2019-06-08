@@ -1,14 +1,21 @@
 import * as actions from "../actions/food";
 
-const initialState = { list: []};
+const initialState = { list: {}};
 
-export default function foodReducer(state = initialState, action: any) {
+const foodReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case actions.ADD_FOOD:
-      return Object.assign({}, state, { food: [...state.list, ...action.content] });
+      return Object.assign({}, state, { 
+        list: {
+          ...state.list, 
+          [action.content.name] : {...action.content},
+        }
+      });
     case actions.EDIT_FOOD:
-      return Object.assign({}, state, { food: [...state.list, ...action.content] });
+      return Object.assign({}, state, { list: { [action.content.name] : {...action.content} }});
     default:
       return state;
   }
 }
+
+export default foodReducer;

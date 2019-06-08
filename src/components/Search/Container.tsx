@@ -16,8 +16,8 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const SearchFood = connect(mapStateToProps, mapDispatchToProps)(
+const SearchContainer = connect(mapStateToProps, mapDispatchToProps)(
   Search
 );
 
-export default SearchFood;
+export default SearchContainer;

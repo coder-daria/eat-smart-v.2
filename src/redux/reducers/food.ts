@@ -1,11 +1,17 @@
 import * as actions from "../actions/food";
 
-const initialState = { list: {}, searchedFood: ""};
+const initialState = { 
+  isSnackbarVisible: true, 
+  list: {}, 
+  searchedFood: "",
+};
 
 const foodReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case actions.ADD_FOOD:
-      return Object.assign({}, state, { 
+
+      return Object.assign({}, state, {
+        isSnackbarVisible: true,
         list: {
           ...state.list, 
           [action.content.name] : {...action.content},

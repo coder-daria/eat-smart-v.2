@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const PageContent = styled.div`
+  background-color: ${({ theme }) => theme.palette.peach.light50};
   display: flex;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 75px);
   justify-content: center;
   padding-top: 35px;
   width: 100vw;
-  background-color: ${({ theme }) => theme.palette.peach.light50};
 `;
 
-export const FoodContainer = styled.div`
+export const Container = styled.div`
   height: calc(100vh - 140px);
   width: 50vw;
 `;
@@ -17,7 +17,7 @@ export const FoodContainer = styled.div`
 export const Options = styled.div`
   display: flex;
   padding-bottom: 35px;
-  /* @todo remove after adding Selection and Search */
+  // @todo remove after adding Selection and Search
   div {
     width: 50%;
   }

@@ -1,23 +1,35 @@
 import * as React from "react";
+import { connect } from "react-redux";
 
+import Snackbar from "../../components/Snackbar";
 import Form from "../../components/Form";
 import SearchFood from "../../components/Search";
 import Selection from "../../components/Selection";
 
 import { 
   Container,
-  FoodContainer,
   FormContainer,
   FormWrapper,
   ImgWrapper,
   Options,
+  PageContent,
 } from "./styles";
 
-interface FoodStateProps {
-  isEditable: boolean
+interface FoodState {
+  isEditable: boolean;
 }
 
-class Food extends React.Component<{}, FoodStateProps> {
+interface FoodProps {
+  isSnackbarVisible: boolean;
+}
+
+const mapStateToProps = (state:any) => {
+  return {
+    isSnackbarVisible: state.food.isSnackbarVisible,
+  }
+}
+
+class Food extends React.Component<FoodProps, FoodState> {
   constructor(props){
     super(props);
     this.state = {
@@ -35,10 +47,11 @@ class Food extends React.Component<{}, FoodStateProps> {
 
   render() {
     const { isEditable } = this.state;
+    const { isSnackbarVisible } = this.props;
 
     return (
-      <Container>
-        <FoodContainer>
+      <PageContent>
+        <Container>
           <Options>
             <div>
               <Selection isEditable={isEditable} onChange={this.changeOption} />
@@ -53,10 +66,22 @@ class Food extends React.Component<{}, FoodStateProps> {
               <Form />
             </FormWrapper>
           </FormContainer>
-        </FoodContainer>
-      </Container>
+        </Container>
+        {
+          isSnackbarVisible && (
+            <Snackbar shade="default" iconSize={18}>
+              Food successfully added
+            </Snackbar>
+          )
+        }
+      </PageContent>
     );
   }
 }
 
-export default Food;
+const FoodContainer = connect(
+  mapStateToProps,
+  null,
+)(Food);
+
+export default FoodContainer;

@@ -1,10 +1,9 @@
 import * as React from "react";
 import { mount } from "enzyme";
 
-import GlobalThemeProvider from "./../../components/GlobalThemeProvider";
-
-import Icon from "./../../components/Icon";
 import { Container, Text } from "./../../components/Snackbar/styles";
+import GlobalThemeProvider from "./../../components/GlobalThemeProvider";
+import Icon from "./../../components/Icon";
 import Snackbar from "./../../components/Snackbar";
 
 describe("<Search>", () => {

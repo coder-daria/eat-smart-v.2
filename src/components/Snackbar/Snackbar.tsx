@@ -11,6 +11,7 @@ interface SnackbarProps {
   iconFill?: string;
   iconName?: string;
   iconSize?: number;
+  // todo Add proper types
   onClick?: () => void;
   shade?: "dark25" | "default" | "light25";
 }

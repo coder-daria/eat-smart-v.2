@@ -10,6 +10,7 @@ import {
 
 interface SelectionProps {
   isEditable: boolean;
+  // todo Add proper types
   onChange: () => void;
 };
 

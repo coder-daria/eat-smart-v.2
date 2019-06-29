@@ -1,10 +1,10 @@
 import * as React from "react";
 import { connect } from "react-redux";
 
-import Snackbar from "../../components/Snackbar";
 import Form from "../../components/Form";
 import SearchFood from "../../components/Search";
 import Selection from "../../components/Selection";
+import Snackbar from "../../components/Snackbar";
 
 import { 
   Container,
@@ -23,6 +23,7 @@ interface FoodProps {
   isSnackbarVisible: boolean;
 }
 
+//todo add state types
 const mapStateToProps = (state:any) => {
   return {
     isSnackbarVisible: state.food.isSnackbarVisible,

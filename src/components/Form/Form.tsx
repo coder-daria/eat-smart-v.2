@@ -12,7 +12,19 @@ interface Values {
   protein: string;
 }
 
-const Form: React.FC = (props:any) => {
+interface FormProps {
+  //@todo Add proper types
+  addFood: (values: any) => void;
+  //@todo Check why it's needed
+  children?: any;
+  editFood: (values: any) => void;
+  isEditable: boolean;
+  searchedFood?: string;
+  //@todo Add proper types
+  list: any;
+}
+
+const Form: React.FC = (props:FormProps) => {
   const initialValues = {
     carbs: "",
     fat: "",
@@ -67,15 +79,27 @@ const Form: React.FC = (props:any) => {
 
     return errors;
   };
-  
+
+  const getInitValues = () => {
+    if (props.isEditable && props.searchedFood !== "") {
+      return props.list[props.searchedFood];
+
+    } else {
+      return initialValues;
+    }
+  }
+
   return (
     <Formik
-      initialValues={initialValues}
-      validate={handleValidation}
+      enableReinitialize
+      initialValues={getInitValues()}
       onSubmit={(values: Values, { resetForm }) => {
-        props.addFood(values);
+        const { addFood, editFood, isEditable } = props;
+        
+        isEditable ? editFood(values) : addFood(values);
         resetForm(initialValues);
       }}
+      validate={handleValidation}
     >
       {({
         errors,
@@ -86,6 +110,7 @@ const Form: React.FC = (props:any) => {
         values,
       }) => {
         const isDisabled = areEmptyValues || Object.entries(errors).length !== 0;
+        const isDisabledWhileEditable = props.isEditable && props.searchedFood === "";
 
         return (
           <StyledForm onSubmit={handleSubmit}>
@@ -93,6 +118,7 @@ const Form: React.FC = (props:any) => {
               <Input
                 error={errors[field.name] && touched[field.name]}
                 errorMessage={errors[field.name]}
+                isDisabled={isDisabledWhileEditable}
                 key={field.name + index}
                 name={field.name}
                 onBlur={handleBlur}
@@ -102,7 +128,7 @@ const Form: React.FC = (props:any) => {
                 value={values[field.name]}
               />
             )}
-            <StyledButton type="submit" disabled={isDisabled}>
+            <StyledButton type="submit" disabled={isDisabledWhileEditable || isDisabled}>
               Submit
             </StyledButton>
           </StyledForm>

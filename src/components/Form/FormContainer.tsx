@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { addFood } from "../../redux/actions/food";
+import { addFood, editFood } from "../../redux/actions/food";
 
 import Form from "./Form";
 
@@ -8,12 +8,14 @@ import Form from "./Form";
 const mapStateToProps = (state:any) => {
   return {
     list: state.food.list,
+    searchedFood: state.food.searchedFood,
   }
 }
 
 const mapDispatchToProps = (dispatch:any) => {
   return {
-    addFood: (food:any) => dispatch(addFood(food))
+    addFood: (food:any) => dispatch(addFood(food)),
+    editFood: (food:any) => dispatch(editFood(food)),
   }
 }
 

@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { Field } from "formik";
 
-export const InputWrapper = styled.div`
+interface InputWrapperProps {
+  isDisabled: boolean;
+}
+
+export const InputWrapper = styled.div<InputWrapperProps>`
+  cursor: ${({ isDisabled }) => isDisabled && "not-allowed"};
   display: flex;
   flex-direction: column;
   height: 45px;
@@ -13,4 +18,5 @@ export const StyledInput = styled(Field)`
   font-size: .65rem;
   outline: none;
   padding: 5px;
+  pointer-events: ${({ isDisabled }) => isDisabled && "none"};
 `;

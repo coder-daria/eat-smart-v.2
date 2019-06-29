@@ -64,7 +64,7 @@ class Food extends React.Component<FoodProps, FoodState> {
               <img height="100%" width="100%" src="https://minimalistbaker.com/wp-content/uploads/2018/04/DELICIOUS-Dragon-Fruit-Smoothie-Bowls-5-minutes-5-ingredients-1-blender-RICH-in-vitamins-and-minerals-vegan-glutenfree-smoothie-recipe-dragonfruit-12.jpg" />
             </ImgWrapper>
             <FormWrapper>
-              <Form />
+              <Form isEditable={isEditable} />
             </FormWrapper>
           </FormContainer>
         </Container>

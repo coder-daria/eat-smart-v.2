@@ -18,9 +18,36 @@ const foodReducer = (state = initialState, action: any) => {
         }
       });
     case actions.EDIT_FOOD:
-      return Object.assign({}, state, { list: { [action.content.name] : {...action.content} }});
+      if(state.searchedFood !== action.content.name) {
+        let newState = Object.assign({}, state, {
+          list: {
+          ...state.list,
+          [action.content.name] : {...action.content} 
+          },
+          searchedFood: ""
+        });
+
+        delete newState.list[state.searchedFood]
+
+        return newState;
+      }
+
+      return Object.assign({}, state, { 
+        list: { 
+          ...state.list,
+          [action.content.name] : {...action.content} 
+        },
+        searchedFood: "",
+      });
     case actions.SEARCH_FOOD:
-      return Object.assign({}, state, { searchFood: action.content });
+      const isSearchFoodInList = state.list[action.content];
+
+      if(isSearchFoodInList) {
+        return Object.assign({}, state, { searchedFood: action.content });
+      }
+  
+      return Object.assign({}, state, { searchedFood: "" });
+      
     default:
       return state;
   }

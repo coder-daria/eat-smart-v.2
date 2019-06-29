@@ -4,9 +4,10 @@ import { searchFood } from "../../redux/actions/food";
 
 import Search from "./Search";
 
-const mapStateToProps = state => {
+//@todo Add proper types
+const mapStateToProps = (state: any) => {
   return {
-    searchedFood: state.searchedFood
+    searchedFood: state.food.searchedFood
   };
 };
 

@@ -8,7 +8,9 @@ interface InputProps {
   //@todo Add proper types
   error: boolean | any;
   errorMessage: string | any;
+  isDisabled: boolean;
   name: string;
+  //@todo Add proper types
   onBlur: (e:any) => void;
   onChange: (e: any) => void;
   placeholder?: string | number;
@@ -23,11 +25,13 @@ const Input: React.FC<InputProps> = ({
   onBlur,
   onChange,
   placeholder,
+  isDisabled,
   type,
   value,
 }) => (
-  <InputWrapper>
+  <InputWrapper isDisabled={isDisabled}>
     <StyledInput
+      isDisabled={isDisabled}
       as="input"
       autoComplete="off"
       error={error}

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Daily from "../../templates/Daily";
-import Food from "../../templates/Food";
-import Landing from "../../templates/Landing";
+import Daily from "../../pages/Daily";
+import Food from "../../pages/Food";
+import Landing from "../../pages/Landing";
 import PageNotFound from "../../components/PageNotFound";
-import Preferences from "../../templates/Preferences";
+import Preferences from "../../pages/Preferences";
 
 /** Routes have been moved to the separate file
  *  for better testing.

@@ -4,11 +4,11 @@ import { MemoryRouter } from "react-router-dom";
 
 import GlobalThemeProvider from "./../../components/GlobalThemeProvider";
 
-import Daily from "../../templates/Daily";
-import Food from "../../templates/Food";
-import Landing from "../../templates/Landing";
+import Daily from "../../pages/Daily";
+import Food from "../../pages/Food";
+import Landing from "../../pages/Landing";
 import PageNotFound from "../../components/PageNotFound";
-import Preferences from "../../templates/Preferences";
+import Preferences from "../../pages/Preferences";
 import Routes from "../../components/Routes";
 
 describe("<Routes/>", () => {

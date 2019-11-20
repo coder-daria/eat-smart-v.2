@@ -2,14 +2,14 @@ import * as React from "react";
 import { shallow } from "enzyme";
 
 import Card from "./../../components/Card";
-import Landing from "./../../templates/Landing";
+import Landing from "../../pages/Landing";
 import {   
   BackgroundImageWrapper,
   BackgroundLayer,
   Description,
   Hero,
   Text,
-} from "./../../templates/Landing/styles";
+} from "../../pages/Landing/styles";
 
 describe("<Landing>", () => {
   const wrapper = shallow(<Landing />);

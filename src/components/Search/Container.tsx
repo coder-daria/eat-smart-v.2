@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { searchFood } from "../../redux/actions/food";
+import { searchFood } from "../../redux/asyncActions/food";;
 
 import Search from "./Search";
 

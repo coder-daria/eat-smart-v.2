@@ -18,7 +18,8 @@ interface FormProps {
   //@todo Check why it's needed
   children?: any;
   editFood: (values: any) => void;
-  isEditable: boolean;
+  //@todo Check if it should be  required
+  isEditable?: boolean;
   searchedFood?: string;
   //@todo Add proper types
   list: any;
@@ -31,6 +32,7 @@ const Form: React.FC = (props:FormProps) => {
     name: "",
     protein: "",
   };
+
   const fields = [
     {
       name: "name",
@@ -95,9 +97,10 @@ const Form: React.FC = (props:FormProps) => {
       initialValues={getInitValues()}
       onSubmit={(values: Values, { resetForm }) => {
         const { addFood, editFood, isEditable } = props;
-        
-        isEditable ? editFood(values) : addFood(values);
+  
         resetForm(initialValues);
+
+        isEditable ? editFood(values) : addFood(values);
       }}
       validate={handleValidation}
     >

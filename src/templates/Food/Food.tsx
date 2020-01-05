@@ -21,12 +21,14 @@ interface FoodState {
 
 interface FoodProps {
   isSnackbarVisible: boolean;
+  isFoodFound: boolean;
 }
 
 //todo add state types
 const mapStateToProps = (state:any) => {
   return {
     isSnackbarVisible: state.food.isSnackbarVisible,
+    isFoodFound: state.food.isFoodFound,
   }
 }
 
@@ -46,10 +48,24 @@ class Food extends React.Component<FoodProps, FoodState> {
     });
   };
 
+  snackbarMessage = () => {
+    const { isEditable } = this.state;
+    const { isFoodFound } = this.props;
+    let message = "";
+
+    if(isEditable) {
+      message = isFoodFound ?  "Food successfully edited" : "Food has not been found";
+    } else {
+      message = "Food successfully added";
+    }
+
+    return message;
+  }
   render() {
     const { isEditable } = this.state;
-    const { isSnackbarVisible } = this.props;
-
+    const { isSnackbarVisible, isFoodFound } = this.props;
+    const isError = isEditable && !isFoodFound;
+  
     return (
       <PageContent>
         <Container>
@@ -70,8 +86,13 @@ class Food extends React.Component<FoodProps, FoodState> {
         </Container>
         {
           isSnackbarVisible && (
-            <Snackbar shade="default" iconSize={18}>
-              Food successfully added
+            <Snackbar 
+            color={isError ? "error" : "success"} 
+            shade="default" 
+            iconSize={18}
+            iconName={isError ? "cancelCircle" : "checkmark"}
+            >
+              {this.snackbarMessage()}
             </Snackbar>
           )
         }

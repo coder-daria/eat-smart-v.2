@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { addFood, editFood } from "../../redux/actions/food";
+import { addFood, editFood } from "../../redux/asyncActions/food";
 
 import Form from "./Form";
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch:any) => {
   }
 }
 
-const FormContainer = connect(
+const sFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Form)
